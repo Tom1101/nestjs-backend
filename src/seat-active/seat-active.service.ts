@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { RepositoryService } from '@nestjsx/crud/typeorm';
-import { BilletEntity } from './billet.entity';
+import { SeatActiveEntity } from './seat-active.entity';
 
 @Injectable()
-export class BilletService extends RepositoryService<BilletEntity> {
-  constructor(@InjectRepository(BilletEntity) repo) {
+export class SeatActiveService extends RepositoryService<SeatActiveEntity> {
+  constructor(@InjectRepository(SeatActiveEntity) repo) {
     super(repo);
   }
 }
