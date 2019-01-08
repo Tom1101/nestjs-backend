@@ -30,3 +30,6 @@ yarn-error.log
 /coverage
 /.nyc_output
 build/config\.gypi
+
+#OrmConfig
+ormconfig.json
