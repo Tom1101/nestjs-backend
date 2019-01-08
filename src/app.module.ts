@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Connection } from 'typeorm';
 import { CustomerModule } from './customer/customer.module';
 import { BilletModule } from './billet/billet.module';
 import { SeatModule } from './seat/seat.module';
@@ -14,6 +13,4 @@ import { SeatActivityModule } from './seat-activity/seat-activity.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {
-  constructor(private readonly connection: Connection) {}
-}
+export class AppModule {}

@@ -1,5 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { JoinColumn, OneToMany, OneToOne } from 'typeorm/browser';
+import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToMany, OneToOne } from 'typeorm';
 import { SeatEntity } from '../seat/seat.entity';
 import { SeatActivityEntity } from '../seat-activity/seat-activity.entity';
 import { BilletEntity } from '../billet/billet.entity';
@@ -7,7 +6,7 @@ import { BilletEntity } from '../billet/billet.entity';
 @Entity()
 export class SeatActiveEntity {
   // Entities
-  @PrimaryGeneratedColumn('uuid') id: number;
+  @PrimaryGeneratedColumn() id: number;
   @Column() dateActive: Date;
   @Column() dateInactive: Date;
   // Relations
