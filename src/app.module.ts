@@ -7,9 +7,10 @@ import { BilletModule } from './billet/billet.module';
 import { SeatModule } from './seat/seat.module';
 import { SeatActiveModule } from './seat-active/seat-active.module';
 import { SeatActivityModule } from './seat-activity/seat-activity.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), CustomerModule, BilletModule, SeatModule, SeatActiveModule, SeatActivityModule],
+  imports: [TypeOrmModule.forRoot(), CustomerModule, BilletModule, SeatModule, SeatActiveModule, SeatActivityModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
