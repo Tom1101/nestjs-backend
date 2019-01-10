@@ -7,7 +7,7 @@ import { BilletEntity } from '../billet/billet.entity';
 @Injectable()
 export class AuthService {
 
-  constructor(private jwtService: JwtService, private billetService: BilletService) {
+  constructor(private billetService: BilletService, private jwtService: JwtService) {
   }
 
   async validateBilletByNumero(loginAttempt: BilletEntity) {
