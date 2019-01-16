@@ -1,5 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToOne, JoinColumn } from 'typeorm';
-import { Order } from '../order/order.entity';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToOne, JoinColumn, OneToMany } from 'typeorm';
+import { OrderTab } from '../order/order.entity';
 import { Product } from '../product/product.entity';
 import { ApiModelProperty } from '@nestjs/swagger';
 import { IsInt } from 'class-validator';
@@ -22,9 +22,8 @@ export class OrderDetail {
   @IsInt()
   @Column() total: number;
   // Relation
-  @ManyToOne(type => Order, order => order.orderDetails)
-  order: Order;
-  @OneToOne(type => Product)
-  @JoinColumn()
+  @ManyToOne(type => OrderTab, order => order.orderDetails)
+  order: OrderTab;
+  @ManyToOne(type => Product, product => product.orderDetails)
   product: Product;
 }

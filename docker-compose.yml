@@ -12,8 +12,6 @@ services:
       - 3000:3000
     depends_on:
       - db
-    environment:
-      NODE_ENV: development
     networks:
       - project-network
 

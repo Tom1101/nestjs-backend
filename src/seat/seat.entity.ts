@@ -1,6 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
 import { ApiModelProperty } from '@nestjs/swagger';
 import { IsBoolean, IsInt, IsString } from 'class-validator';
+import { SeatActive } from '../seat-active/seat-active.entity';
 
 @Entity()
 export class Seat {
@@ -21,4 +22,6 @@ export class Seat {
   @IsBoolean()
   @Column('boolean') isWorking: boolean;
   // Relations
+  @OneToMany(type => SeatActive, seatActive => seatActive.seat)
+  seatActives: SeatActive[];
 }

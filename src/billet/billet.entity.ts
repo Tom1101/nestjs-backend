@@ -1,7 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
 import { IsString, IsInt } from 'class-validator';
 import { Customer } from '../customer/customer.entity';
 import { ApiModelProperty } from '@nestjs/swagger';
+import { SeatActive } from '../seat-active/seat-active.entity';
 
 @Entity()
 export class Billet {
@@ -23,7 +24,7 @@ export class Billet {
   @Column() toWhere: string;
 
   @ApiModelProperty()
-  @Column() dateDepat: Date;
+  @Column() dateDepart: string;
 
   @ApiModelProperty()
   @IsInt()
@@ -36,4 +37,6 @@ export class Billet {
   // Relations
   @ManyToOne(type => Customer, customer => customer.billets)
   customer: Customer;
+  @OneToMany(type => SeatActive, seatActive => seatActive.billet)
+  seatActives: SeatActive[];
 }

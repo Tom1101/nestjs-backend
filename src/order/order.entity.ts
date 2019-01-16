@@ -6,7 +6,7 @@ import { IsBoolean, IsInt, IsString } from 'class-validator';
 import { ApiModelProperty } from '@nestjs/swagger';
 
 @Entity()
-export class Order {
+export class OrderTab {
   @ApiModelProperty()
   @IsInt()
   @PrimaryGeneratedColumn() id: number;
@@ -16,8 +16,8 @@ export class Order {
   @Column() numero: number;
 
   @ApiModelProperty()
-  @IsInt()
-  @Column() orderDate: number;
+  @IsString()
+  @Column() orderDate: string;
 
   @ApiModelProperty()
   @IsBoolean()
@@ -28,11 +28,8 @@ export class Order {
   @Column() paymentType: string;
 
   @ApiModelProperty()
-  @Column() paymentDate: Date;
-
-  @ApiModelProperty()
-  @IsInt()
-  @Column('time') shippingTime: number;
+  @IsString()
+  @Column() paymentDate: string;
 
   // Relations
   @ManyToOne(type => Shipper, shipper => shipper.orders)

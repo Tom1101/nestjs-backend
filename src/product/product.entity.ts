@@ -1,8 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
 import { Category } from '../category/category.entity';
 import { Supplier } from '../supplier/supplier.entity';
 import { ApiModelProperty } from '@nestjs/swagger';
-import { IsInt, IsString } from 'class-validator';
+import { IsBoolean, IsInt, IsString } from 'class-validator';
+import { OrderDetail } from '../order-detail/order-detail.entity';
 
 @Entity()
 export class Product {
@@ -23,11 +24,13 @@ export class Product {
   @Column() price: number;
 
   @ApiModelProperty()
-  @IsString()
+  @IsBoolean()
   @Column() status: boolean;
   // Relation
   @ManyToOne(type => Category, category => category.products)
   category: Category;
   @ManyToOne(type => Supplier, supplier => supplier.products)
   supplier: Supplier;
+  @OneToMany(type => OrderDetail, orderDetail => orderDetail.product)
+  orderDetails: OrderDetail[];
 }

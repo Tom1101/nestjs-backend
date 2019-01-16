@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany} from 'typeorm';
 import { Billet } from '../billet/billet.entity';
-import { Order } from '../order/order.entity';
+import { OrderTab } from '../order/order.entity';
 import { ApiModelProperty } from '@nestjs/swagger';
 import { IsInt, IsString } from 'class-validator';
 
@@ -26,6 +26,6 @@ export class Customer {
   // Relations
   @OneToMany(type => Billet, billet => billet.customer)
   billets: Billet[];
-  @OneToMany(type => Order, order => order.customer)
-  orders: Order[];
+  @OneToMany(type => OrderTab, order => order.customer)
+  orders: OrderTab[];
 }
