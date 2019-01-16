@@ -1,11 +1,11 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-import { SeatActive } from '../seat-active/seat-active.entity';
+import { Category } from '../category/category.entity';
+import { Supplier } from '../supplier/supplier.entity';
 import { ApiModelProperty } from '@nestjs/swagger';
 import { IsInt, IsString } from 'class-validator';
 
 @Entity()
-export class SeatActivity {
-  // Entities
+export class Product {
   @ApiModelProperty()
   @IsInt()
   @PrimaryGeneratedColumn() id: number;
@@ -16,16 +16,18 @@ export class SeatActivity {
 
   @ApiModelProperty()
   @IsInt()
-  @Column() duration: number;
+  @Column() quantity: number;
 
   @ApiModelProperty()
   @IsInt()
-  @Column('time') timeStart: number;
+  @Column() price: number;
 
   @ApiModelProperty()
-  @IsInt()
-  @Column('time') timeEnd: number;
-  // Relations
-  @ManyToOne(type => SeatActive, seatActive => seatActive.seatActivities)
-  seatActive: SeatActive;
+  @IsString()
+  @Column() status: boolean;
+  // Relation
+  @ManyToOne(type => Category, category => category.products)
+  category: Category;
+  @ManyToOne(type => Supplier, supplier => supplier.products)
+  supplier: Supplier;
 }

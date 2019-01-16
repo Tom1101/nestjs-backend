@@ -2,7 +2,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtPayload } from './interface/jwt-payload.interface';
 import { JwtService } from '@nestjs/jwt';
 import { BilletService } from '../billet/billet.service';
-import { BilletEntity } from '../billet/billet.entity';
+import { Billet } from '../billet/billet.entity';
 
 @Injectable()
 export class AuthService {
@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private billetService: BilletService, private jwtService: JwtService) {
   }
 
-  async validateBilletByNumero(loginAttempt: BilletEntity) {
+  async validateBilletByNumero(loginAttempt: Billet) {
     // This will be used for the initial login
     const billetToAttempt = await this.billetService.findOneByNumero(loginAttempt.numero);
     return new Promise((resolve) => {

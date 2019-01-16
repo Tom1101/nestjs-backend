@@ -1,14 +1,31 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany} from 'typeorm';
-import { BilletEntity } from '../billet/billet.entity';
+import { Billet } from '../billet/billet.entity';
+import { Order } from '../order/order.entity';
+import { ApiModelProperty } from '@nestjs/swagger';
+import { IsInt, IsString } from 'class-validator';
 
 @Entity()
-export class CustomerEntity {
+export class Customer {
   // Entities
+  @ApiModelProperty()
+  @IsInt()
   @PrimaryGeneratedColumn() id: number;
+
+  @ApiModelProperty()
+  @IsString()
   @Column({ length: 100 }) name: string;
-  @Column('int') phone: number;
+
+  @ApiModelProperty()
+  @IsString()
+  @Column() phone: string;
+
+  @ApiModelProperty()
+  @IsString()
   @Column() mail: string;
+
   // Relations
-  @OneToMany(type => BilletEntity, billet => billet.customer)
-  billets: BilletEntity[];
+  @OneToMany(type => Billet, billet => billet.customer)
+  billets: Billet[];
+  @OneToMany(type => Order, order => order.customer)
+  orders: Order[];
 }

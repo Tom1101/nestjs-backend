@@ -1,21 +1,29 @@
 import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToMany, OneToOne } from 'typeorm';
-import { SeatEntity } from '../seat/seat.entity';
-import { SeatActivityEntity } from '../seat-activity/seat-activity.entity';
-import { BilletEntity } from '../billet/billet.entity';
+import { Seat } from '../seat/seat.entity';
+import { SeatActivity } from '../seat-activity/seat-activity.entity';
+import { Billet } from '../billet/billet.entity';
+import { ApiModelProperty } from '@nestjs/swagger';
+import { IsInt } from 'class-validator';
 
 @Entity()
-export class SeatActiveEntity {
+export class SeatActive {
   // Entities
+  @ApiModelProperty()
+  @IsInt()
   @PrimaryGeneratedColumn() id: number;
+
+  @ApiModelProperty()
   @Column() dateActive: Date;
+
+  @ApiModelProperty()
   @Column() dateInactive: Date;
   // Relations
-  @OneToOne(type => SeatEntity)
+  @OneToOne(type => Seat)
   @JoinColumn()
-  seat: SeatEntity;
-  @OneToOne(type => BilletEntity)
+  seat: Seat;
+  @OneToOne(type => Billet)
   @JoinColumn()
-  billet: BilletEntity;
-  @OneToMany(type => SeatActivityEntity, seatActivity => seatActivity.seatActive)
-  seatActivities: SeatActivityEntity[];
+  billet: Billet;
+  @OneToMany(type => SeatActivity, seatActivity => seatActivity.seatActive)
+  seatActivities: SeatActivity[];
 }

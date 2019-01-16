@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { SeatActiveService } from './seat-active.service';
 import { SeatActiveController } from './seat-active.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { SeatActiveEntity } from './seat-active.entity';
+import { SeatActive } from './seat-active.entity';
 @Module({
-  imports: [TypeOrmModule.forFeature([SeatActiveEntity])],
+  imports: [TypeOrmModule.forFeature([SeatActive])],
   providers: [SeatActiveService],
   controllers: [SeatActiveController],
 })

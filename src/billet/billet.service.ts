@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { RepositoryService } from '@nestjsx/crud/typeorm';
-import { BilletEntity } from './billet.entity';
+import { Billet } from './billet.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class BilletService extends RepositoryService<BilletEntity> {
-  constructor(@InjectRepository(BilletEntity) repo,
-              @InjectRepository(BilletEntity) private readonly billetRepository: Repository<BilletEntity>) {
+export class BilletService extends RepositoryService<Billet> {
+  constructor(@InjectRepository(Billet) repo,
+              @InjectRepository(Billet) private readonly billetRepository: Repository<Billet>) {
     super(repo);
   }
-  async findOneByNumero(numero): Promise<BilletEntity> {
+  async findOneByNumero(numero): Promise<Billet> {
     return await this.billetRepository.findOne({numero});
   }
 }
