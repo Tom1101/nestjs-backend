@@ -1,6 +1,20 @@
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+* Pa8 API build on [Nest framework](https://github.com/nestjs/nest)  TypeScript starter repository.
+* Swagger OpenAPI
+* JWT Authentication ( updating )
+
+## How to use
+Need Docker installed
+```bash
+$ docker-compose up --build
+```
+
+## API Documentation
+
+```bash
+$ http://localhost:3000/api
+```
 
 ## Installation
 
