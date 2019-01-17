@@ -3,8 +3,8 @@
   "host": "db",
   "port": 3306,
   "username": "root",
-  "password": "root",
-  "database": "mydb",
+  "password": "pa8-project",
+  "database": "pa8-db",
   "entities": ["src/**/**.entity{.ts,.js}"],
   "synchronize": true
 }
