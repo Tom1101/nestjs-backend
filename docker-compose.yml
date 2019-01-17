@@ -2,6 +2,15 @@
 version: '3.1'
 
 services:
+  nginx:
+    image: nginx:1.15-alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./data/nginx:/etc/nginx/conf.d
+    networks:
+      - project-network
+
   nest:
     image: nest-server
     build:
@@ -9,19 +18,9 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - 3000:80
+      - 3000:3000
     depends_on:
       - db
-    networks:
-      - project-network
-
-  nginx:
-    image: nginx:1.15-alpine
-    ports:
-      - 80:80
-    volumes:
-      - ./data/nginx:/etc/nginx/conf.d
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     networks:
       - project-network
 
@@ -40,7 +39,7 @@ services:
     image: adminer
     restart: always
     ports:
-      - 8080:80
+      - 8080:8080
     networks:
       - project-network
 
