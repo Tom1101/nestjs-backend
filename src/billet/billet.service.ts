@@ -11,6 +11,6 @@ export class BilletService extends RepositoryService<Billet> {
     super(repo);
   }
   async findOneByNumero(numero): Promise<Billet> {
-    return await this.billetRepository.findOne({numero});
+    return await this.billetRepository.findOne({numero : numero});
   }
 }

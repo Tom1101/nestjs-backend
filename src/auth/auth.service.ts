@@ -10,9 +10,9 @@ export class AuthService {
   constructor(private billetService: BilletService, private jwtService: JwtService) {
   }
 
-  async validateBilletByNumero(loginAttempt: Billet) {
+  async validateBilletByNumero(numeroBillet) {
     // This will be used for the initial login
-    const billetToAttempt = await this.billetService.findOneByNumero(loginAttempt.numero);
+    const billetToAttempt = await this.billetService.findOneByNumero(numeroBillet);
     return new Promise((resolve) => {
       if (billetToAttempt) {
         return this.createJwtPayload(billetToAttempt);
@@ -22,10 +22,14 @@ export class AuthService {
     });
   }
 
+  async findBilletByNumero(numeroBillet) {
+    return await this.billetService.findOneByNumero(numeroBillet);
+  }
+
   async validateBilletByJwt(payload: JwtPayload) {
 
     // This will be used when the user has already logged in and has a JWT
-    const billet = await this.billetService.findOneByNumero(payload.numero);
+    const billet = await this.billetService.findOneByNumero(payload);
 
     if (billet) {
       return this.createJwtPayload(billet);
@@ -38,7 +42,7 @@ export class AuthService {
   createJwtPayload(billet) {
 
     const data: JwtPayload = {
-      numero: billet.numero,
+      numero: billet,
     };
 
     const jwt = this.jwtService.sign(data);
