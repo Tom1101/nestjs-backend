@@ -10,4 +10,10 @@ export class ShipperService extends RepositoryService<Shipper> {
               @InjectRepository(Shipper) private readonly shipperRepository: Repository<Shipper>) {
     super(repo);
   }
+  async findOrderById(id): Promise<Shipper[]> {
+    return await this.shipperRepository.createQueryBuilder('shipper')
+      .leftJoinAndSelect('shipper.orders', 'order')
+      .where('shipper.id = :shipperId', { shipperId: id})
+      .getMany();
+  }
 }

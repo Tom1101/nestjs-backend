@@ -1,4 +1,4 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { Crud } from '@nestjsx/crud';
 import { Shipper } from './shipper.entity';
 import { ShipperService } from './shipper.service';
@@ -9,4 +9,8 @@ import { ApiUseTags } from '@nestjs/swagger';
 @Controller('shipper')
 export class ShipperController {
   constructor(public service: ShipperService) {}
+  @Get('/:id/order')
+  async findOrderById(@Param('id') id) {
+    return await this.service.findOrderById(id);
+  }
 }
