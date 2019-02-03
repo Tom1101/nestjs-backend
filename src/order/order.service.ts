@@ -11,9 +11,9 @@ export class OrderService extends RepositoryService<OrderTab> {
     super(repo);
   }
   async findOrderByCustomerId(id): Promise<OrderTab[]> {
-    return await this.orderRepository.createQueryBuilder('order')
-      .leftJoinAndSelect('order.customer', 'customer')
-      .where('order.customerId = :customerId', { customerId: id})
+    return await this.orderRepository.createQueryBuilder('customer')
+      .leftJoinAndSelect('customer.orders', 'order')
+      .where('customer.id = :customerId', { customerId: id})
       .getMany();
   }
   async findDetailById(id): Promise<OrderTab[]> {
