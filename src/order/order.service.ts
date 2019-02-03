@@ -10,10 +10,10 @@ export class OrderService extends RepositoryService<OrderTab> {
               @InjectRepository(OrderTab) private readonly orderRepository: Repository<OrderTab>) {
     super(repo);
   }
-  async findOrderByCustomerId(id): Promise<OrderTab[]> {
-    return await this.orderRepository.createQueryBuilder('customer')
-      .leftJoinAndSelect('customer.orders', 'order')
-      .where('customer.id = :customerId', { customerId: id})
+  async findCustomerById(id): Promise<OrderTab[]> {
+    return await this.orderRepository.createQueryBuilder('order')
+      .leftJoinAndSelect('order.customer', 'customer')
+      .where('order.id = :orderId', { orderId: id})
       .getMany();
   }
   async findDetailById(id): Promise<OrderTab[]> {
