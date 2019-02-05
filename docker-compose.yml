@@ -8,8 +8,8 @@ services:
       context: ./
       dockerfile: Dockerfile
     restart: always
-    ports:
-      - 33572:3000
+    labels:
+      - "traefik.frontend.rule=Host:api.welab22.com"
     links:
       - db
     depends_on:
@@ -29,8 +29,8 @@ services:
   adminer:
     image: adminer
     restart: always
-    ports:
-      - 33571:8080
+    labels:
+      - "traefik.frontend.rule=Host:adminer.welab22.com"
     networks:
       - project-network
 
