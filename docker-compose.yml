@@ -9,6 +9,7 @@ services:
       dockerfile: Dockerfile
     restart: always
     labels:
+      - "traefik.port=3000"
       - "traefik.frontend.rule=Host:api.welab22.com"
     links:
       - db
@@ -30,6 +31,7 @@ services:
     image: adminer
     restart: always
     labels:
+      - "traefik.port=8080"
       - "traefik.frontend.rule=Host:adminer.welab22.com"
     networks:
       - project-network
