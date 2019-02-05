@@ -11,31 +11,5 @@ services:
     labels:
       - "traefik.port=3000"
       - "traefik.frontend.rule=Host:api.welab22.com"
-    links:
-      - db
-    depends_on:
-      - db
     networks:
-      - project-network
-
-  db:
-    image: mariadb
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: pa8-project
-      MYSQL_DATABASE: pa8-db
-    networks:
-      - project-network
-
-  adminer:
-    image: adminer
-    restart: always
-    labels:
-      - "traefik.port=8080"
-      - "traefik.frontend.rule=Host:adminer.welab22.com"
-    networks:
-      - project-network
-
-networks:
-  project-network:
-    driver: bridge
+      - dockerdemo_default
