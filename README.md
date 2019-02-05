@@ -2,7 +2,7 @@
 
 * Pa8 API build on [Nest framework](https://github.com/nestjs/nest)  TypeScript starter repository.
 * Swagger OpenAPI
-* Jenkins Updating
+* Jenkins Updating Thomas
 * JWT Authentication ( updating )
 
 ## How to use
