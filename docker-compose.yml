@@ -11,5 +11,3 @@ services:
     labels:
       - "traefik.port=3000"
       - "traefik.frontend.rule=Host:api.welab22.com"
-    networks:
-      - dockerdemo_default
