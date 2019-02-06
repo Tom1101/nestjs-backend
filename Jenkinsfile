@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('rebuild') {
       steps {
-        sh '''cd /usr/src/app'''
+        sh '''cd /var/app'''
         sh '''docker-compose up --build -d'''
       }
     }
