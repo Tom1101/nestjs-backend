@@ -15,8 +15,6 @@ services:
       - db
     depends_on:
       - db
-    networks:
-      - custom_network
 
   db:
     image: mariadb
@@ -24,8 +22,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: pa8-project
       MYSQL_DATABASE: pa8-db
-    networks:
-      - custom_network
 
   adminer:
     image: adminer
@@ -33,9 +29,3 @@ services:
     labels:
       - "traefik.port=8080"
       - "traefik.frontend.rule=Host:adminer.welab22.com"
-    networks:
-      - custom_network
-
-networks:
-  custom_network:
-    name: dockerdemo_default
