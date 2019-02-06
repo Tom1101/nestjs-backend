@@ -1,11 +1,13 @@
 pipeline {
+  environment {
+        PATH = "$PATH:/usr/local/bin"
+  }
   agent any
   stages {
     stage('rebuild') {
       steps {
         sh '''cd /usr/src/app
-docker-compose build nest
-docker-compose up -d nest'''
+docker-compose up --build -d'''
       }
     }
   }
