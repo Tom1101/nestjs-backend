@@ -20,12 +20,12 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@nestjs/common": "^5.7.0",
-    "@nestjs/core": "^5.7.0",
+    "@nestjs/common": "^5.7.2",
+    "@nestjs/core": "^5.7.2",
     "@nestjs/jwt": "^0.2.1",
     "@nestjs/passport": "^5.1.0",
     "@nestjs/swagger": "^2.5.1",
-    "@nestjs/typeorm": "^5.2.2",
+    "@nestjs/typeorm": "^5.3.0",
     "@nestjsx/crud": "^2.1.1",
     "class-transformer": "^0.2.0",
     "class-validator": "^0.9.1",
@@ -35,17 +35,17 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^2.6.2",
     "rxjs": "^6.4.0",
-    "typeorm": "^0.2.12",
-    "typescript": "^3.3.1"
+    "typeorm": "^0.2.13",
+    "typescript": "^3.3.3"
   },
   "devDependencies": {
-    "@nestjs/testing": "^5.7.0",
+    "@nestjs/testing": "^5.7.2",
     "@types/express": "^4.16.1",
     "@types/jest": "^23.3.14",
-    "@types/node": "^10.12.21",
+    "@types/node": "^10.12.24",
     "@types/supertest": "^2.0.5",
     "jest": "^23.5.0",
-    "nodemon": "^1.18.3",
+    "nodemon": "^1.18.10",
     "prettier": "^1.16.4",
     "supertest": "^3.4.2",
     "ts-jest": "^23.1.3",
