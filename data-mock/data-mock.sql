@@ -79,26 +79,26 @@ insert into supplier (name, location, phone) values ('Divanoodle', '#be0', '+86 
 insert into supplier (name, location, phone) values ('Skiptube', '#fa5', '+33 754 916 2993');
 
 -- ADD 20 Product
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Kazio', 10, 382, 0, 3, 1);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Youopia', 85, 490, 1, 6, 8);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Skaboo', 97, 277, 1, 3, 10);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('JumpXS', 62, 117, 1, 8, 7);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Photospace', 84, 663, 1, 7, 8);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Zoombox', 45, 316, 1, 6, 8);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Zoomzone', 93, 818, 1, 5, 10);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Meemm', 5, 640, 1, 1, 8);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Fliptune', 28, 562, 0, 2, 10);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Avamba', 87, 610, 0, 4, 4);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Jayo', 54, 270, 1, 3, 4);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Fatz', 38, 739, 0, 10, 1);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Voolith', 31, 699, 1, 10, 4);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Voonte', 89, 433, 1, 6, 9);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('LiveZ', 49, 556, 1, 10, 7);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Fivespan', 92, 929, 0, 2, 7);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Bluezoom', 91, 550, 1, 3, 5);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Twimbo', 46, 367, 0, 8, 9);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Jabbercube', 67, 147, 1, 4, 1);
-insert into product (name, quantity, price, status, categoryId, supplierId) values ('Quaxo', 31, 888, 1, 3, 4);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Kazio', '659912309', 10, 382, 0, 3, 1);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Youopia', '659912309', 85, 490, 1, 6, 8);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Skaboo', '659912309', 97, 277, 1, 3, 10);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('JumpXS', '659912309', 62, 117, 1, 8, 7);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Photospace', '659912309', 84, 663, 1, 7, 8);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Zoombox', '659912309', 45, 316, 1, 6, 8);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Zoomzone', '659912309', 93, 818, 1, 5, 10);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Meemm', '659912309', 5, 640, 1, 1, 8);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Fliptune', '659912309', 28, 562, 0, 2, 10);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Avamba', '659912309', 87, 610, 0, 4, 4);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Jayo', '659912309', 54, 270, 1, 3, 4);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Fatz', '659912309', 38, 739, 0, 10, 1);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Voolith', '659912309', 31, 699, 1, 10, 4);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Voonte', '659912309', 89, 433, 1, 6, 9);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('LiveZ', '659912309', 49, 556, 1, 10, 7);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Fivespan', '659912309', 92, 929, 0, 2, 7);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Bluezoom', '659912309', 91, 550, 1, 3, 5);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Twimbo', '659912309', 46, 367, 0, 8, 9);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Jabbercube', '659912309', 67, 147, 1, 4, 1);
+insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Quaxo', '659912309', 31, 888, 1, 3, 4);
 
 
 -- ADD 20 Seat
@@ -137,16 +137,16 @@ insert into seat_active (dateActive, seatId, billetId) values ('29/03/2018', 18,
 insert into seat_active (dateActive, seatId, billetId) values ('29/09/2018', 11, 20);
 
 -- ADD 10 order
-insert into order_tab (numero, orderDate, paidStatus, paymentType, paymentDate, shipperId, customerId) values ('179253174', '07/01/2019', 1, 'bankcard', '24/05/2018', 10, 8);
-insert into order_tab (numero, orderDate, paidStatus, paymentType, paymentDate, shipperId, customerId) values ('557410509', '15/12/2018', 0, 'switch', '10/07/2018', 5, 5);
-insert into order_tab (numero, orderDate, paidStatus, paymentType, paymentDate, shipperId, customerId) values ('643022395', '18/03/2018', 0, 'laser', '03/06/2018', 2, 9);
-insert into order_tab (numero, orderDate, paidStatus, paymentType, paymentDate, shipperId, customerId) values ('728996624', '28/01/2018', 1, 'jcb', '14/04/2018', 3, 4);
-insert into order_tab (numero, orderDate, paidStatus, paymentType, paymentDate, shipperId, customerId) values ('664454746', '15/01/2019', 0, 'switch', '13/04/2018', 10, 2);
-insert into order_tab (numero, orderDate, paidStatus, paymentType, paymentDate, shipperId, customerId) values ('085427163', '17/04/2018', 1, 'switch', '27/08/2018', 10, 10);
-insert into order_tab (numero, orderDate, paidStatus, paymentType, paymentDate, shipperId, customerId) values ('763191777', '21/07/2018', 0, 'china-unionpay', '23/09/2018', 6, 1);
-insert into order_tab (numero, orderDate, paidStatus, paymentType, paymentDate, shipperId, customerId) values ('660112834', '13/08/2018', 0, 'diners-club-carte-blanche', '08/01/2019', 3, 9);
-insert into order_tab (numero, orderDate, paidStatus, paymentType, paymentDate, shipperId, customerId) values ('176853411', '22/08/2018', 1, 'jcb', '04/01/2019', 1, 6);
-insert into order_tab (numero, orderDate, paidStatus, paymentType, paymentDate, shipperId, customerId) values ('203888051', '27/05/2018', 1, 'jcb', '23/03/2018', 4, 5);
+insert into order_tab (numero, orderDate, orderTime, paidStatus, paymentType, paymentDate, status, shipperId, customerId, supplierId) values ('179253174', '07/01/2019', '12:00', 1, 'bankcard', '24/05/2018', 'status', 10, 8, 1);
+insert into order_tab (numero, orderDate, orderTime, paidStatus, paymentType, paymentDate, status, shipperId, customerId, supplierId) values ('557410509', '15/12/2018', '13:50', 0, 'switch', '10/07/2018', 'status', 5, 5, 2);
+insert into order_tab (numero, orderDate, orderTime, paidStatus, paymentType, paymentDate, status, shipperId, customerId, supplierId) values ('643022395', '18/03/2018', '09:40', 0, 'laser', '03/06/2018', 'status', 2, 9, 3);
+insert into order_tab (numero, orderDate, orderTime, paidStatus, paymentType, paymentDate, status, shipperId, customerId, supplierId) values ('728996624', '28/01/2018', '11:35', 1, 'jcb', '14/04/2018', 'status', 3, 4, 1);
+insert into order_tab (numero, orderDate, orderTime, paidStatus, paymentType, paymentDate, status, shipperId, customerId, supplierId) values ('664454746', '15/01/2019', '16:20', 0, 'switch', '13/04/2018', 'status', 10, 2, 2);
+insert into order_tab (numero, orderDate, orderTime, paidStatus, paymentType, paymentDate, status, shipperId, customerId, supplierId) values ('085427163', '17/04/2018', '19:10', 1, 'switch', '27/08/2018', 'status', 10, 10, 4);
+insert into order_tab (numero, orderDate, orderTime, paidStatus, paymentType, paymentDate, status, shipperId, customerId, supplierId) values ('763191777', '21/07/2018', '14:00', 0, 'china-unionpay', '23/09/2018', 'status', 6, 1, 1);
+insert into order_tab (numero, orderDate, orderTime, paidStatus, paymentType, paymentDate, status, shipperId, customerId, supplierId) values ('660112834', '13/08/2018', '15:30', 0, 'diners-club-carte-blanche', '08/01/2019', 'status', 3, 9, 3);
+insert into order_tab (numero, orderDate, orderTime, paidStatus, paymentType, paymentDate, status, shipperId, customerId, supplierId) values ('176853411', '22/08/2018', '15:20', 1, 'jcb', '04/01/2019', 'status', 1, 6, 2);
+insert into order_tab (numero, orderDate, orderTime, paidStatus, paymentType, paymentDate, status, shipperId, customerId, supplierId) values ('203888051', '27/05/2018', '10:40', 1, 'jcb', '23/03/2018', 'status', 4, 5, 4);
 
 -- ADD 100 Order Detail
 insert into order_detail (quantity, discount, total, orderId, productId) values (18, 20, 1717, 9, 11);

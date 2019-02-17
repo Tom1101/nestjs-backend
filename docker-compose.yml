@@ -8,6 +8,8 @@ services:
       context: ./
       dockerfile: Dockerfile
     restart: always
+    ports:
+      - 3000:3000
     labels:
       - "traefik.port=3000"
       - "traefik.frontend.rule=Host:api.welab22.com"
@@ -30,6 +32,8 @@ services:
   adminer:
     image: adminer
     restart: always
+    ports:
+      - 8080:8080
     labels:
       - "traefik.port=8080"
       - "traefik.frontend.rule=Host:adminer.welab22.com"

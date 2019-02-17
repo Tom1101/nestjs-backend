@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { Crud } from '@nestjsx/crud';
 import { Shipper } from './shipper.entity';
 import { ShipperService } from './shipper.service';
@@ -11,6 +11,11 @@ export class ShipperController {
   constructor(public service: ShipperService) {}
   @Get('/:id/order')
   async findOrderById(@Param('id') id) {
+    return await this.service.findOrderById(id);
+  }
+
+  @Post()
+  async findOrderByIdPost(@Body('id') id) {
     return await this.service.findOrderById(id);
   }
 }

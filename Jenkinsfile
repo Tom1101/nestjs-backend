@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('rebuild') {
       steps {
-        sh '''sh /var/jenkins_home/deploy.sh'''
+        sh '''sh /var/jenkins_home/deploy//.sh'''
       }
     }
   }

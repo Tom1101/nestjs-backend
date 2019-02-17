@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToOne, JoinColumn, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToOne, JoinColumn, OneToMany, Index } from 'typeorm';
 import { OrderTab } from '../order/order.entity';
 import { Product } from '../product/product.entity';
 import { ApiModelProperty } from '@nestjs/swagger';
@@ -21,9 +21,21 @@ export class OrderDetail {
   @ApiModelProperty()
   @IsInt()
   @Column() total: number;
+
+  @ApiModelProperty()
+  @IsInt()
+  @Column({ nullable: true }) orderId: number;
+
+  @ApiModelProperty()
+  @IsInt()
+  @Column({ nullable: true }) productId: number;
+
   // Relation
   @ManyToOne(type => OrderTab, order => order.orderDetails)
+  @JoinColumn()
   order: OrderTab;
+
   @ManyToOne(type => Product, product => product.orderDetails)
+  @JoinColumn()
   product: Product;
 }

@@ -16,6 +16,10 @@ export class Product {
   @Column() name: string;
 
   @ApiModelProperty()
+  @IsString()
+  @Column() url: string;
+
+  @ApiModelProperty()
   @IsInt()
   @Column() quantity: number;
 
@@ -26,6 +30,7 @@ export class Product {
   @ApiModelProperty()
   @IsBoolean()
   @Column() status: boolean;
+
   // Relation
   @ManyToOne(type => Category, category => category.products)
   category: Category;
