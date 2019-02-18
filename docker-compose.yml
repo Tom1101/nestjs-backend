@@ -18,7 +18,8 @@ services:
     depends_on:
       - db
     networks:
-      - dockerdemo_default
+      - dockerdemo_default:
+          ipv4_address: 172.20.0.9
 
   db:
     image: mariadb
@@ -39,8 +40,12 @@ services:
       - "traefik.port=8080"
       - "traefik.frontend.rule=Host:adminer.welab22.com"
     networks:
-      - dockerdemo_default
+      - dockerdemo_default:
+          ipv4_address: 172.20.0.7
 
 networks:
   dockerdemo_default:
     name: dockerdemo_default
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
