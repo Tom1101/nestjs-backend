@@ -18,8 +18,7 @@ services:
     depends_on:
       - db
     networks:
-      dockerdemo_default:
-        ipv4_address: 172.20.0.9
+      - dockerdemo_default
 
   db:
     image: mariadb
@@ -28,8 +27,7 @@ services:
       MYSQL_ROOT_PASSWORD: pa8-project
       MYSQL_DATABASE: pa8-db
     networks:
-      dockerdemo_default:
-        ipv4_address: 172.20.0.8
+      - dockerdemo_default
 
   adminer:
     image: adminer
@@ -40,13 +38,8 @@ services:
       - "traefik.port=8080"
       - "traefik.frontend.rule=Host:adminer.welab22.com"
     networks:
-      dockerdemo_default:
-        ipv4_address: 172.20.0.7
+      - dockerdemo_default
 
 networks:
   dockerdemo_default:
     name: dockerdemo_default
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.20.0.0/24
