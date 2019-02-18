@@ -27,7 +27,8 @@ services:
       MYSQL_ROOT_PASSWORD: pa8-project
       MYSQL_DATABASE: pa8-db
     networks:
-      - dockerdemo_default
+      - dockerdemo_default:
+          ipv4_address: 172.20.0.8
 
   adminer:
     image: adminer
