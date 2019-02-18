@@ -21,6 +21,7 @@ export class Seat {
   @ApiModelProperty()
   @IsBoolean()
   @Column('boolean') isWorking: boolean;
+
   // Relations
   @OneToMany(type => SeatActive, seatActive => seatActive.seat)
   seatActives: SeatActive[];

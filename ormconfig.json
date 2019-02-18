@@ -1,6 +1,6 @@
 {
   "type": "mysql",
-  "host": "db",
+  "host": "172.20.0.8",
   "port": 3306,
   "username": "root",
   "password": "pa8-project",

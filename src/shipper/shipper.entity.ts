@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinTable } from 'typeorm';
 import { OrderTab } from '../order/order.entity';
 import { ApiModelProperty } from '@nestjs/swagger';
 import { IsInt, IsString } from 'class-validator';

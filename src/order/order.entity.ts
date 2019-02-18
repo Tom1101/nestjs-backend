@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, JoinColumn } from 'typeorm';
 import { Shipper } from '../shipper/shipper.entity';
 import { Customer } from '../customer/customer.entity';
 import { OrderDetail } from '../order-detail/order-detail.entity';
@@ -40,12 +40,27 @@ export class OrderTab {
   @IsString()
   @Column() status: string;
 
+  @ApiModelProperty()
+  @IsInt()
+  @Column({ nullable: true }) shipperId: number;
+
+  @ApiModelProperty()
+  @IsInt()
+  @Column({ nullable: true }) customerId: number;
+
+  @ApiModelProperty()
+  @IsInt()
+  @Column({ nullable: true }) supplierId: number;
+
   // Relations
   @ManyToOne(type => Shipper, shipper => shipper.orders)
+  @JoinColumn()
   shipper: Shipper;
   @ManyToOne(type => Customer, customer => customer.orders)
+  @JoinColumn()
   customer: Customer;
   @ManyToOne(type => Supplier, supplier => supplier.orders)
+  @JoinColumn()
   supplier: Supplier;
   @OneToMany(type => OrderDetail, orderDetail => orderDetail.order)
   orderDetails: OrderDetail[];
