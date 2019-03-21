@@ -17,6 +17,10 @@ export class Product {
 
   @ApiModelProperty()
   @IsString()
+  @Column() description: string;
+
+  @ApiModelProperty()
+  @IsString()
   @Column() url: string;
 
   @ApiModelProperty()

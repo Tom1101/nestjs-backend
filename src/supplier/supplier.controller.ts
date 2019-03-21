@@ -15,7 +15,21 @@ export class SupplierController {
     return await this.service.findOrderById(id);
   }
 
-  @Get('/:id/order/:orderId')
+  @Get('/:id/category')
+  async findCategoryById(@Param('id') id) {
+    return await this.service.findCategoryById(id);
+  }
+
+  @Get('/:id/category/:categoryId/products')
+  async findProductById(@Param('id') id, @Param('categoryId') categoryId) {
+    const supplier: Supplier[] = await this.service.findProductById(id, categoryId);
+    if (supplier.length === 0) {
+      throw new HttpException('Invalid Category ID', HttpStatus.BAD_REQUEST);
+    }
+    return supplier;
+  }
+
+  @Get('/:id/order/:orderId/details')
   async findDetailOrderById(@Param('orderId') orderId, @Param('id') id) {
     const supplier: Supplier[] = await this.service.findDetailById(id, orderId);
     if (supplier.length === 0) {

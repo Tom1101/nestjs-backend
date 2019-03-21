@@ -10,4 +10,10 @@ export class CategoryService extends RepositoryService<Category> {
               @InjectRepository(Category) private readonly categoryRepository: Repository<Category>) {
     super(repo);
   }
+  async findProductById(id): Promise<Category[]> {
+    return await this.categoryRepository.createQueryBuilder('category')
+      .leftJoinAndSelect('category.products', 'product')
+      .where('category.id = :categoryId', { categoryId: id})
+      .getMany();
+  }
 }

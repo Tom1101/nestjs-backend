@@ -21,16 +21,16 @@ insert into customer (name, phone, mail) values ('Menzies'' Pepperweed', '+62 37
 insert into customer (name, phone, mail) values ('Cutleaf Anemone', '+57 531 375 4761', 'kbrownriggj@yolasite.com');
 
 -- ADD 10 Category
-insert into category (name, description) values ('Maroon', 'Chronic duodenal ileus');
-insert into category (name, description) values ('Crimson', 'TB of eye-oth test');
-insert into category (name, description) values ('Puce', 'Open wound of trunk NEC');
-insert into category (name, description) values ('Orange', 'Ac alcohol intox-unspec');
-insert into category (name, description) values ('Aquamarine', 'Gu TB NOS-histo dx');
-insert into category (name, description) values ('Teal', 'Toxic eff ethyl alcohol');
-insert into category (name, description) values ('Maroon', 'Purine/pyrimid dis NEC');
-insert into category (name, description) values ('Yellow', 'Fracture acetabulum-open');
-insert into category (name, description) values ('Green', 'Secondary malig neo NEC');
-insert into category (name, description) values ('Khaki', 'Early cong syph symptom');
+insert into category (name, description, supplierId) values ('Maroon', 'Chronic duodenal ileus', 1);
+insert into category (name, description, supplierId) values ('Crimson', 'TB of eye-oth test', 1);
+insert into category (name, description, supplierId) values ('Puce', 'Open wound of trunk NEC', 1);
+insert into category (name, description, supplierId) values ('Orange', 'Ac alcohol intox-unspec', 2);
+insert into category (name, description, supplierId) values ('Aquamarine', 'Gu TB NOS-histo dx', 2);
+insert into category (name, description, supplierId) values ('Teal', 'Toxic eff ethyl alcohol', 2);
+insert into category (name, description, supplierId) values ('Maroon', 'Purine/pyrimid dis NEC', 3);
+insert into category (name, description, supplierId) values ('Yellow', 'Fracture acetabulum-open', 3);
+insert into category (name, description, supplierId) values ('Green', 'Secondary malig neo NEC', 4);
+insert into category (name, description, supplierId) values ('Khaki', 'Early cong syph symptom', 5);
 
 -- ADD 20 Billet
 insert into billet (numero, fromWhere, toWhere, dateDepart, timeDepart, timeArrival, customerId) values ('9407976645', 'Shuihu', 'Besisahar', '28/12/2018', '5:17', '12:51', 1);
@@ -79,30 +79,30 @@ insert into supplier (name, location, phone) values ('Divanoodle', '#be0', '+86 
 insert into supplier (name, location, phone) values ('Skiptube', '#fa5', '+33 754 916 2993');
 
 -- ADD 20 Product
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Kazio', '659912309', 10, 382, 0, 3, 1);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Youopia', '659912309', 85, 490, 1, 6, 8);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Skaboo', '659912309', 97, 277, 1, 3, 10);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('JumpXS', '659912309', 62, 117, 1, 8, 7);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Photospace', '659912309', 84, 663, 1, 7, 8);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Zoombox', '659912309', 45, 316, 1, 6, 8);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Zoomzone', '659912309', 93, 818, 1, 5, 10);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Meemm', '659912309', 5, 640, 1, 1, 8);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Fliptune', '659912309', 28, 562, 0, 2, 10);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Avamba', '659912309', 87, 610, 0, 4, 4);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Jayo', '659912309', 54, 270, 1, 3, 4);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Fatz', '659912309', 38, 739, 0, 10, 1);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Voolith', '659912309', 31, 699, 1, 10, 4);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Voonte', '659912309', 89, 433, 1, 6, 9);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('LiveZ', '659912309', 49, 556, 1, 10, 7);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Fivespan', '659912309', 92, 929, 0, 2, 7);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Bluezoom', '659912309', 91, 550, 1, 3, 5);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Twimbo', '659912309', 46, 367, 0, 8, 9);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Jabbercube', '659912309', 67, 147, 1, 4, 1);
-insert into product (name, url, quantity, price, status, categoryId, supplierId) values ('Quaxo', '659912309', 31, 888, 1, 3, 4);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Kazio', 'Description', 'https://loremflickr.com/150/150/food', 10, 382, 0, 3, 1);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Youopia', 'Description', 'https://loremflickr.com/150/150/food', 85, 490, 1, 6, 8);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Skaboo', 'Description', 'https://loremflickr.com/150/150/food', 97, 277, 1, 3, 10);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('JumpXS', 'Description', 'https://loremflickr.com/150/150/food', 62, 117, 1, 8, 7);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Photospace', 'Description', 'https://loremflickr.com/150/150/food', 84, 663, 1, 7, 8);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Zoombox', 'Description', 'https://loremflickr.com/150/150/food', 45, 316, 1, 6, 8);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Zoomzone', 'Description', 'https://loremflickr.com/150/150/food', 93, 818, 1, 5, 10);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Meemm', 'Description', 'https://loremflickr.com/150/150/food', 5, 640, 1, 1, 8);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Fliptune','Description', 'https://loremflickr.com/150/150/food', 28, 562, 0, 2, 10);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Avamba','Description', 'https://loremflickr.com/150/150/food', 87, 610, 0, 4, 4);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Jayo','Description', 'https://loremflickr.com/150/150/food', 54, 270, 1, 3, 4);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Fatz','Description', 'https://loremflickr.com/150/150/food', 38, 739, 0, 10, 1);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Voolith','Description', 'https://loremflickr.com/150/150/food', 31, 699, 1, 10, 4);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Voonte','Description', 'https://loremflickr.com/150/150/food', 89, 433, 1, 6, 9);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('LiveZ','Description', 'https://loremflickr.com/150/150/food', 49, 556, 1, 10, 7);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Fivespan','Description', 'https://loremflickr.com/150/150/food', 92, 929, 0, 2, 7);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Bluezoom','Description', 'https://loremflickr.com/150/150/food', 91, 550, 1, 3, 5);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Twimbo','Description', 'https://loremflickr.com/150/150/food', 46, 367, 0, 8, 9);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Jabbercube','Description', 'https://loremflickr.com/150/150/food', 67, 147, 1, 4, 1);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Quaxo','Description', 'https://loremflickr.com/150/150/food', 31, 888, 1, 3, 4);
 
 
 -- ADD 20 Seat
-insert into seat (numero, location, isWorking) values ('659912309', '#3dc', 1);
+insert into seat (numero, location, isWorking) values ('659912308', '#3dc', 1);
 insert into seat (numero, location, isWorking) values ('057584195', '#7da', 0);
 insert into seat (numero, location, isWorking) values ('612569381', '#c74', 0);
 insert into seat (numero, location, isWorking) values ('572100267', '#533', 1);
