@@ -20,18 +20,6 @@ insert into customer (name, phone, mail) values ('Point Reyes Lupine', '+93 952 
 insert into customer (name, phone, mail) values ('Menzies'' Pepperweed', '+62 372 739 4518', 'cdacrei@meetup.com');
 insert into customer (name, phone, mail) values ('Cutleaf Anemone', '+57 531 375 4761', 'kbrownriggj@yolasite.com');
 
--- ADD 10 Category
-insert into category (name, description, supplierId) values ('Maroon', 'Chronic duodenal ileus', 1);
-insert into category (name, description, supplierId) values ('Crimson', 'TB of eye-oth test', 1);
-insert into category (name, description, supplierId) values ('Puce', 'Open wound of trunk NEC', 1);
-insert into category (name, description, supplierId) values ('Orange', 'Ac alcohol intox-unspec', 2);
-insert into category (name, description, supplierId) values ('Aquamarine', 'Gu TB NOS-histo dx', 2);
-insert into category (name, description, supplierId) values ('Teal', 'Toxic eff ethyl alcohol', 2);
-insert into category (name, description, supplierId) values ('Maroon', 'Purine/pyrimid dis NEC', 3);
-insert into category (name, description, supplierId) values ('Yellow', 'Fracture acetabulum-open', 3);
-insert into category (name, description, supplierId) values ('Green', 'Secondary malig neo NEC', 4);
-insert into category (name, description, supplierId) values ('Khaki', 'Early cong syph symptom', 5);
-
 -- ADD 20 Billet
 insert into billet (numero, fromWhere, toWhere, dateDepart, timeDepart, timeArrival, customerId) values ('9407976645', 'Shuihu', 'Besisahar', '28/12/2018', '5:17', '12:51', 1);
 insert into billet (numero, fromWhere, toWhere, dateDepart, timeDepart, timeArrival, customerId) values ('1667061488', 'Zdiby', 'Singojuruh', '28/10/2018', '22:19', '1:34', 2);
@@ -77,6 +65,18 @@ insert into supplier (name, location, phone) values ('Oyondu', '#323', '+504 422
 insert into supplier (name, location, phone) values ('Edgeclub', '#f1c', '+31 860 239 6842');
 insert into supplier (name, location, phone) values ('Divanoodle', '#be0', '+86 817 197 6372');
 insert into supplier (name, location, phone) values ('Skiptube', '#fa5', '+33 754 916 2993');
+
+-- ADD 10 Category
+insert into category (name, description, supplierId) values ('Maroon', 'Chronic duodenal ileus', 1);
+insert into category (name, description, supplierId) values ('Crimson', 'TB of eye-oth test', 1);
+insert into category (name, description, supplierId) values ('Puce', 'Open wound of trunk NEC', 1);
+insert into category (name, description, supplierId) values ('Orange', 'Ac alcohol intox-unspec', 2);
+insert into category (name, description, supplierId) values ('Aquamarine', 'Gu TB NOS-histo dx', 2);
+insert into category (name, description, supplierId) values ('Teal', 'Toxic eff ethyl alcohol', 2);
+insert into category (name, description, supplierId) values ('Maroon', 'Purine/pyrimid dis NEC', 3);
+insert into category (name, description, supplierId) values ('Yellow', 'Fracture acetabulum-open', 3);
+insert into category (name, description, supplierId) values ('Green', 'Secondary malig neo NEC', 4);
+insert into category (name, description, supplierId) values ('Khaki', 'Early cong syph symptom', 5);
 
 -- ADD 20 Product
 insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Kazio', 'Description', 'https://loremflickr.com/150/150/food', 10, 382, 0, 3, 1);
