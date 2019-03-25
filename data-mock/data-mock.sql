@@ -81,7 +81,7 @@ insert into category (name, description, supplierId) values ('Khaki', 'Early con
 -- ADD 20 Product
 insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Café', 'Description', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/193px-A_small_cup_of_coffee.JPG', 10, 1, 0, 3, 1);
 insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Chocolatine', 'Description', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Pain_au_chocolat_Luc_Viatour.jpg/320px-Pain_au_chocolat_Luc_Viatour.jpg', 85, 2, 1, 6, 8);
-insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Glace', 'Description', https://vignette.wikia.nocookie.net/norjan/images/1/10/734032_488576241192028_1506444650_n.jpg/revision/latest?cb=20130515223008&path-prefix=fr', 97, 5, 1, 3, 10);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Glace', 'Description', 'https://vignette.wikia.nocookie.net/norjan/images/1/10/734032_488576241192028_1506444650_n.jpg/revision/latest?cb=20130515223008&path-prefix=fr', 97, 5, 1, 3, 10);
 insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('JumpXS', 'Description', 'https://loremflickr.com/150/150/food', 62, 117, 1, 8, 7);
 insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Photospace', 'Description', 'https://loremflickr.com/150/150/food', 84, 663, 1, 7, 8);
 insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Zoombox', 'Description', 'https://loremflickr.com/150/150/food', 45, 316, 1, 6, 8);
@@ -97,7 +97,7 @@ insert into product (name, description, url, quantity, price, status, categoryId
 insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Fivespan','Description', 'https://loremflickr.com/150/150/food', 92, 929, 0, 2, 7);
 insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Bluezoom','Description', 'https://loremflickr.com/150/150/food', 91, 550, 1, 3, 5);
 insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Twimbo','Description', 'https://loremflickr.com/150/150/food', 46, 367, 0, 8, 9);
-insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Pastis','Description', https://images-na.ssl-images-amazon.com/images/I/41xMGbOS4hL.jpg', 67, 2, 1, 4, 1);
+insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Pastis','Description', 'https://images-na.ssl-images-amazon.com/images/I/41xMGbOS4hL.jpg', 67, 2, 1, 4, 1);
 insert into product (name, description, url, quantity, price, status, categoryId, supplierId) values ('Quaxo','Description', 'https://loremflickr.com/150/150/food', 31, 888, 1, 3, 4);
 
 
